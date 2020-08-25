@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="efc39922-4504-4d83-9bc1-e764638f31a9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1g2x3p5gKfQcWQNyDhvFAeEN2xv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../serverplandev" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\msiAp\PhpstormProjects\testGulp\module\assets\img" />
+      <recent name="C:\Users\msiAp\PhpstormProjects\testGulp\module\assets\sass" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\msiAp\PhpstormProjects\testGulp\module\assets" />
+      <recent name="C:\Users\msiAp\PhpstormProjects\testGulp\deprecated" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="efc39922-4504-4d83-9bc1-e764638f31a9" name="Default Changelist" comment="" />
+      <created>1597326291796</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597326291796</updated>
+      <workItem from="1597326292859" duration="12458000" />
+      <workItem from="1597388425771" duration="19988000" />
+      <workItem from="1597610262557" duration="3500000" />
+      <workItem from="1598250945936" duration="1441000" />
+      <workItem from="1598340118455" duration="391000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TerminalProjectNonSharedOptionsProvider">
+    <option name="shellPath" value="E:\Git\bin\bash.exe" />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-983" y="227" key="FileChooserDialogImpl" timestamp="1598250965115">
+      <screen x="-1600" y="0" width="1600" height="860" />
+    </state>
+    <state x="-983" y="227" key="FileChooserDialogImpl/0.0.1920.1040/-1600.0.1600.860@-1600.0.1600.860" timestamp="1598250965115" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1600.0.1600.860@0.0.1920.1040" timestamp="1597391900787" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1597391903864">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1600.0.1600.860@0.0.1920.1040" timestamp="1597391903864" />
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1597392715472">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/-1600.0.1600.860@0.0.1920.1040" timestamp="1597392715472" />
+  </component>
+</project>

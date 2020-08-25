@@ -1,0 +1,23 @@
+{
+  "name": "testgulp",
+  "version": "1.0.0",
+  "description": "gulp sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gianluca",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-gzip": "^1.4.2",
+    "gulp-rev": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "modify-filename": "^1.1.0",
+    "through2": "^4.0.2"
+  },
+  "dependencies": {
+    "yargs": "^15.4.1"
+  }
+}
