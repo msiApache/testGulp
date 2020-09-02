@@ -12,8 +12,10 @@
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-gzip": "^1.4.2",
+    "gulp-image": "^6.2.1",
     "gulp-rev": "^9.0.0",
     "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
     "modify-filename": "^1.1.0",
     "through2": "^4.0.2"
   },

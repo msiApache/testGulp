@@ -1,6 +1,9 @@
 {
-  "assets/css/index.css": "assets/css/index-esempio.css",
-  "assets/css/main2.css": "assets/css/main2-esempio.css",
-  "assets/css/prova.css": "assets/css/prova-esempio.css",
-  "assets/js/prova.js": "assets/js/prova-esempio.js"
+  "assets/css/homePage.css": "assets/css/homePage-undefined.css",
+  "assets/css/hosting.css": "assets/css/hosting-undefined.css",
+  "assets/css/index.css": "assets/css/index-undefined.css",
+  "assets/css/layout.css": "assets/css/layout-undefined.css",
+  "assets/css/stylesheet.css": "assets/css/stylesheet-undefined.css",
+  "assets/img/GianlucaTuono.png": "assets/img/GianlucaTuono-undefined.png",
+  "assets/js/javascript.js": "assets/js/javascript-undefined.js"
 }

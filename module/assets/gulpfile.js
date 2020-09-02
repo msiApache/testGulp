@@ -3,64 +3,64 @@ const sass = require('gulp-sass');
 const del = require('del');
 const gzip = require('gulp-gzip');
 const rev = require('gulp-rev');
-const modify = require('modify-filename')
-const through = require('through2')
-var args = require('yargs').argv
+const modify = require('modify-filename');
+const through = require('through2');
+const uglify = require('gulp-uglify');
+const image = require('gulp-image');
+var args = require('yargs').argv;
+var currentRevision = args.hash;
 
 
+//path di destinazione finale degli assets
 const buildDestination = './../../public';
+const buildDestinationDev = './../../../../public';
+
+//path dove appoggiare file temporanei prima di essere spostati nella directory principale
 const tempBuildDestination = './tempBuild';
 
-var currentRevision = args.hash;
-gulp.task('clean', () => {
-    //todo da aggiungere eliminazione degli altri assets
+//cancella tutti i file contenuti nella cartella di destinazione finale buildDestination
+gulp.task('cleanPublicAssets', () => {
     return del([
-        tempBuildDestination
-    ]) ;
+        buildDestination + '/assets'
+    ], {force: true});
 });
 
-gulp.task('sass', function () {
-    return gulp.src('./sass/**/*.scss')
+//convert da sass a css, minify e copyCss
+gulp.task('operationSass', function () {
+    return gulp.src([
+        './sass/**/*.sass',
+        './sass/**/*.scss',
+        './css/**/*.css'
+    ])
         .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(gulp.dest(tempBuildDestination + '/assets/css'));
 });
 
-gulp.task('watch', () => {
-    gulp.watch('./sass/**/*.scss', (done) => {
-        gulp.series(['sass'])(done);
-    });
-});
-
-
-gulp.task('copyImg', function () {
-    return gulp.src('./img/**/*')
-        .pipe(gulp.dest(buildDestination + '/assets/img'));
-});
-
-gulp.task('copyCss', function () {
-    return gulp.src('./css/**/*.css')
-        .pipe(gulp.dest(tempBuildDestination + '/assets/css'));
-});
-
-gulp.task('copyJs', function () {
+//uglify e copyJs da js/ a tempBuild/assets/js
+gulp.task('operationJs', function () {
     return gulp.src('./js/**/*.js')
+        .pipe(uglify())
         .pipe(gulp.dest(tempBuildDestination + '/assets/js'));
 });
 
-gulp.task('compressCss', function () {
-    return gulp.src(buildDestination + '/assets/css/**/*.css')
-        .pipe(gzip())
-        .pipe(gulp.dest(buildDestination + '/assets/css'));
+//copyImg da img/ a tempBuild/assets/img
+gulp.task('operationImg', function () {
+    return gulp.src('./img/**/*')
+        .pipe(image())
+        .pipe(gulp.dest(tempBuildDestination + '/assets/img'));
 });
 
-gulp.task('compressJs', function () {
-    return gulp.src(buildDestination + '/assets/js/**/*.js')
-        .pipe(gzip())
-        .pipe(gulp.dest(buildDestination + '/assets/js'));
-});
-
-gulp.task('rev', function () {
-    return gulp.src([tempBuildDestination + '/assets/css/*.css', tempBuildDestination + '/assets/js/*.js'], {base: tempBuildDestination})
+//prende tutti i file contenuti nella cartella tempBuildDestination gli assegna un hash statico, crea il file manifest.json e copia i file nella
+// cartella di destinazione buildDestination
+gulp.task('revHash', function () {
+    return gulp.src(
+        [
+            tempBuildDestination + '/assets/css/*',
+            tempBuildDestination + '/assets/js/*',
+            tempBuildDestination + '/assets/img/*'
+        ],
+        {base: tempBuildDestination}
+    )
         .pipe(rev())
         .pipe(through.obj(function (file, enc, cb) {
             file.path = modify(file.revOrigPath, function (name, ext) {
@@ -73,5 +73,40 @@ gulp.task('rev', function () {
         .pipe(gulp.dest('./manifest'))
 });
 
+// cancella la directory temporanea tempBuild
+gulp.task('cleanTempBuild', () => {
+    return del([
+        tempBuildDestination
+    ]);
+});
+
+//gz file js in buildDestination/assets/js'
+gulp.task('gzJs', function () {
+    return gulp.src(buildDestination + '/assets/js/**/*.js')
+        .pipe(gzip())
+        .pipe(gulp.dest(buildDestination + '/assets/js'));
+});
+
+//gz file css in buildDestination/assets/css'
+gulp.task('gzCss', function () {
+    return gulp.src(buildDestination + '/assets/css/**/*.css')
+        .pipe(gzip())
+        .pipe(gulp.dest(buildDestination + '/assets/css'));
+});
+
+gulp.task('watch', () => {
+    gulp.watch([
+        './sass/**/*.sass',
+        './sass/**/*.scss',
+        './css/**/*.css',
+        './js/**/*.js'
+    ], (done) => {
+        gulp.series(['cleanPublicAssets', 'operationSass', 'operationJs', 'operationImg', 'revHash', 'cleanTempBuild', 'gzJs', 'gzCss'])(done);
+    });
+});
+
 //Eseguire il comando            gulp --hash esempio                per eseguire i file in formato hash
-gulp.task('default', gulp.series(['clean', 'sass', 'copyCss', 'copyImg', 'copyJs','rev','clean','compressCss','compressJs']));
+gulp.task('default', gulp.series(['cleanPublicAssets', 'operationSass', 'operationJs', 'operationImg', 'revHash', 'cleanTempBuild', 'gzJs', 'gzCss']));
+
+
+
