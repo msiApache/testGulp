@@ -1,6 +1,9 @@
 {
-  "assets/css/index.css": "assets/css/index-esempio.css",
-  "assets/css/main2.css": "assets/css/main2-esempio.css",
-  "assets/css/prova.css": "assets/css/prova-esempio.css",
-  "assets/js/prova.js": "assets/js/prova-esempio.js"
+  "assets/css/homePage.css": "assets/css/homePage-esula.css",
+  "assets/css/index.css": "assets/css/index-esula.css",
+  "assets/css/layout.css": "assets/css/layout-esula.css",
+  "assets/css/main2.css": "assets/css/main2-esula.css",
+  "assets/css/prova.css": "assets/css/prova-esula.css",
+  "assets/img/GianlucaTuono.png": "assets/img/GianlucaTuono-esula.png",
+  "assets/js/prova.js": "assets/js/prova-esula.js"
 }
